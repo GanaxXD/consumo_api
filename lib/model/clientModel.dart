@@ -9,6 +9,9 @@ class Clients {
 
     Clients({this.id, this.nome, this.email, this.fone});
 
+    /*
+    Transforma um objeto json em um cliente.
+     */
     Clients.fromJson(Map<String, dynamic> json) {
         id = json['id'];
         nome = json['nome'];
@@ -16,6 +19,9 @@ class Clients {
         fone = json['fone'];
     }
 
+    /*
+    Mapeia um objeto dart em um objeto json.
+     */
     Map<String, dynamic> toJson() {
         final Map<String, dynamic> data = new Map<String, dynamic>();
         data['id'] = this.id;
