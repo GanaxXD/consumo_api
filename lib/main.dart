@@ -1,4 +1,4 @@
-import 'package:consumoapi/screens/home.dart';
+import 'package:consumoapi/screens/listClient.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +10,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Consumindo Dados da API',
-      home: HomePage(),
+
+      /*
+      Para modificar a cor padrão do Scaffold, eu modifiquei
+      a ThemeData do app geral. Dessa forma eu não vou precisar
+      mudar o scarffold de cada tela.
+       */
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        buttonColor: Colors.white
+      ),
+      //listClient
+      home: HomePage(), //listClient.dart
       debugShowCheckedModeBanner: false,
     );
   }

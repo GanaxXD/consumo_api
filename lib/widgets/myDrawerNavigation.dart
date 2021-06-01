@@ -1,4 +1,6 @@
-import 'package:consumoapi/screens/home.dart';
+import 'package:consumoapi/screens/comentsList.dart';
+import 'package:consumoapi/screens/listClient.dart';
+import 'package:consumoapi/screens/listOrders.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawerNavigation extends StatelessWidget {
@@ -63,9 +65,9 @@ class MyDrawerNavigation extends StatelessWidget {
                         ),
                     ),
                     onTap: (){
-//                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-//                            builder: (context) => HomePage()
-//                        ));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => ListOrders()
+                        ));
                     },
                 ),
 
@@ -79,9 +81,9 @@ class MyDrawerNavigation extends StatelessWidget {
                         ),
                     ),
                     onTap: (){
-//                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-//                            builder: (context) => HomePage()
-//                        ));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => Coments()
+                        ));
                     },
                 ),
 
