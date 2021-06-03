@@ -29,8 +29,8 @@ Dentre as telas constantes na aplicação, podemos mostrar:
 
 ###### Visão geral da aplicação
 <p align="left">
-  <img src="readme_photos/0.png" width="250" title="Menu">
-  <img src="readme_photos/1.png" width="250" alt="Listar Clientes">
-  <img src="readme_photos/2.png" width="250" alt="Listar Comentários">
+  <img src="readme-photos/0.png" width="250" title="Menu">
+  <img src="readme-photos/1.png" width="250" alt="Listar Clientes">
+  <img src="readme-photos/2.png" width="250" alt="Listar Comentários">
 </p> 
 
