@@ -28,7 +28,8 @@ class MyTextFormField extends StatelessWidget {
             ),
             // ignore: missing_return
             validator: (String value){
-                if(hint.contains("Preço") || hint.contains("Id do Proprietário")){
+                if(hint.contains("Preço") || hint.contains("Id do Proprietário")
+                    || hint.contains("Id da Ordem de Serviço")){
                     if(value.startsWith("-")){
                         return "O valor precisa ser maior que zero";
                     }
