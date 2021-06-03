@@ -109,7 +109,7 @@ class MyDrawerNavigation extends StatelessWidget {
 
                 //Cadastrar Ordem de Serviço:
                 ListTile(
-                    leading: Icon(Icons.group_add, color: Colors.indigo),
+                    leading: Icon(Icons.add_shopping_cart, color: Colors.indigo),
                     title: Text("Cadastrar Ordem de Serviço",
                         style: TextStyle(
                             color: Colors.indigo,

@@ -18,7 +18,8 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
     final TextEditingController _clienteIdController = TextEditingController();
     final TextEditingController _descricaoController = TextEditingController();
     final TextEditingController _precoController = TextEditingController();
-    var errorMessage, statusCodeResponse;
+    var errorMessage;
+    var statusCodeResponse;
 
 
     Future<void> success() async{
@@ -102,7 +103,7 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
                             padding: const EdgeInsets.only(top: 30),
                             child: MyButton(
                                 splashColor: Colors.purpleAccent,
-                                icon: Icons.group_add,
+                                icon: Icons.shopping_cart_rounded,
                                 text: "Cadastrar",
                                 onPressed: () async {
                                     if(_formKey.currentState.validate()){
@@ -114,20 +115,25 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
                                                 'descricao': _descricaoController.value.text,
                                                 'clienteId' : _clienteIdController.value.text,
                                                 'preco' : _precoController.value.text,
+                                                'dataAbertura' : DateTime.now().day.toString()+"/"+
+                                                                 DateTime.now().month.toString()+"/"+
+                                                                 DateTime.now().year.toString(),
                                             })
                                         );
-                                        if(response.statusCode == 200){
+                                        if(response.statusCode == 201){
+                                            print("Sucesso: ${response.body}");
                                             success();
                                         } else {
                                             /*
-                                        Por algum motivo, a API está retornando um texto HTML na resposta da requisição,
-                                        mesmo estando configurado pra responder como um JSON. Inicialmente, para lançar
-                                        o app, vou utilizar de um recurso "feio" para receber as informações do erro e exibir
-                                        o alerta da melhor forma possível ao usuário.
-                                         */
-                                            var decodingErrorMessage = response.body.substring(response.body.indexOf("<titulo>"),response.body.indexOf("</titulo>"));
+                                            Por algum motivo, a API está retornando um texto HTML na resposta da requisição,
+                                            mesmo estando configurado pra responder como um JSON. Inicialmente, para lançar
+                                            o app, vou utilizar de um recurso "feio" para receber as informações do erro e exibir
+                                            o alerta da melhor forma possível ao usuário.
+                                             */
+                                            print("Erro: ${response.body}");
+                                            var decodingErrorMessage = response.body.substring(response.body.indexOf("<titulo>"),response.body.indexOf("\</titulo>"));
                                             errorMessage = decodingErrorMessage.substring(8);
-                                            var decodingStatusResponse = response.body.substring(response.body.indexOf("<status>"),response.body.indexOf("</status>"));
+                                            var decodingStatusResponse = response.body.substring(response.body.indexOf("<status>"),response.body.indexOf("\</status>"));
                                             statusCodeResponse = decodingStatusResponse.substring(8);
                                             fail();
                                         }

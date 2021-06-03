@@ -42,9 +42,9 @@ class MyButton extends StatelessWidget {
                     splashColor: splashColor,
                     onPressed: onPressed,
                 ),
-                Text(text, style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.w600
-                ),)
+//                Text(text, style: TextStyle(
+//                    color: Colors.white, fontWeight: FontWeight.w600
+//                ),)
             ],
         )
     );
