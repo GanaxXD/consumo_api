@@ -114,10 +114,12 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
                                             body: jsonEncode(<String, String>{
                                                 'descricao': _descricaoController.value.text,
                                                 'clienteId' : _clienteIdController.value.text,
-                                                'preco' : _precoController.value.text
+                                                'preco' : _precoController.value.text,
+                                                'dataAbertura' : DateTime.now().day.toString()+"/"+
+                                                                 DateTime.now().month.toString()+"/"+
+                                                                 DateTime.now().year.toString(),
                                             })
                                         );
-                                        print(response.statusCode);
                                         if(response.statusCode == 201){
                                             print("Sucesso: ${response.body}");
                                             success();
