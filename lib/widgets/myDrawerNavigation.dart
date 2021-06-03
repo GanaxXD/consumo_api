@@ -1,4 +1,5 @@
 import 'package:consumoapi/screens/addClient.dart';
+import 'package:consumoapi/screens/addComent.dart';
 import 'package:consumoapi/screens/addOrder.dart';
 import 'package:consumoapi/screens/comentsList.dart';
 import 'package:consumoapi/screens/listClient.dart';
@@ -123,6 +124,21 @@ class MyDrawerNavigation extends StatelessWidget {
                     },
                 ),
 
+                //Cadastrar Comentário:
+                ListTile(
+                    leading: Icon(Icons.add_comment, color: Colors.indigo),
+                    title: Text("Cadastrar Comentário",
+                        style: TextStyle(
+                            color: Colors.indigo,
+                            fontSize: 14, fontWeight: FontWeight.w800,
+                        ), overflow: TextOverflow.fade,
+                    ),
+                    onTap: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => CadastrarComentario()
+                        ));
+                    },
+                ),
 
             ],
         ),
