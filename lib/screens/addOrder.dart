@@ -18,8 +18,8 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
     final TextEditingController _clienteIdController = TextEditingController();
     final TextEditingController _descricaoController = TextEditingController();
     final TextEditingController _precoController = TextEditingController();
-    var errorMessage = "400";
-    var statusCodeResponse = "Teste";
+    var errorMessage;
+    var statusCodeResponse;
 
 
     Future<void> success() async{
@@ -114,13 +114,11 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
                                             body: jsonEncode(<String, String>{
                                                 'descricao': _descricaoController.value.text,
                                                 'clienteId' : _clienteIdController.value.text,
-                                                'preco' : _precoController.value.text,
-                                                'dataAbertura' : DateTime.now().day.toString()+"/"+
-                                                                 DateTime.now().month.toString()+"/"+
-                                                                 DateTime.now().year.toString(),
+                                                'preco' : _precoController.value.text
                                             })
                                         );
-                                        if(response.statusCode == 200){
+                                        print(response.statusCode);
+                                        if(response.statusCode == 201){
                                             print("Sucesso: ${response.body}");
                                             success();
                                         } else {
@@ -131,10 +129,10 @@ class _CadastrarOrdemState extends State<CadastrarOrdem> {
                                             o alerta da melhor forma possível ao usuário.
                                              */
                                             print("Erro: ${response.body}");
-//                                            var decodingErrorMessage = response.body.substring(response.body.indexOf("<titulo>", 0),response.body.indexOf("</titulo>"));
-//                                            errorMessage = decodingErrorMessage.substring(8);
-//                                            var decodingStatusResponse = response.body.substring(response.body.indexOf("<status>", 0),response.body.indexOf("</status>"));
-//                                            statusCodeResponse = decodingStatusResponse.substring(8);
+                                            var decodingErrorMessage = response.body.substring(response.body.indexOf("<titulo>"),response.body.indexOf("\</titulo>"));
+                                            errorMessage = decodingErrorMessage.substring(8);
+                                            var decodingStatusResponse = response.body.substring(response.body.indexOf("<status>"),response.body.indexOf("\</status>"));
+                                            statusCodeResponse = decodingStatusResponse.substring(8);
                                             fail();
                                         }
                                     }
