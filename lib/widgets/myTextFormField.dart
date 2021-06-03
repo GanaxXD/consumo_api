@@ -26,6 +26,12 @@ class MyTextFormField extends StatelessWidget {
                 helperText: help,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             ),
+            // ignore: missing_return
+            validator: (String value){
+                if(value == null || value.isEmpty){
+                    return "Este campo é obrigatório.";
+                }
+            },
         ),
     );
   }

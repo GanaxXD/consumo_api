@@ -30,4 +30,13 @@ class Clients {
         data['fone'] = this.fone;
         return data;
     }
+
+    Map<String, dynamic> toJsonObject(Clients client) {
+        final Map<String, dynamic> data = new Map<String, dynamic>();
+        data['id'] = client.id;
+        data['nome'] = client.nome;
+        data['email'] = client.email;
+        data['fone'] = client.fone;
+        return data;
+    }
 }

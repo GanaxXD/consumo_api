@@ -5,15 +5,16 @@ class MyButton extends StatelessWidget {
     IconData icon;
     Color splashColor;
     String text;
+    Function onPressed;
 
-    MyButton({@required this.icon, @required this.splashColor, @required this.text});
+    MyButton({@required this.icon, @required this.splashColor, @required this.text, @required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.only(bottom: 8),
-        width: 145,
-        height: 80,
+        padding: const EdgeInsets.only(bottom: 1),
+        width: 170,
+        height: 50,
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: <Color> [
@@ -24,21 +25,22 @@ class MyButton extends StatelessWidget {
                     Color.fromRGBO(69, 0, 245, 96),
                 ],
                 begin: const FractionalOffset(0.0, 0.0),
-                end: const FractionalOffset(1.0, 0.0),
+                end: const FractionalOffset(1.0, 0.1),
             ),
             color: Colors.green,
-            borderRadius: BorderRadius.circular(60),
+            borderRadius: BorderRadius.circular(88),
         ),
-        child: Column(
+        child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
                 IconButton(
                     padding: EdgeInsets.zero,
                     alignment: Alignment.center,
                     icon: Icon(icon, color: Colors.white,),
                     splashColor: splashColor,
-
+                    onPressed: onPressed,
                 ),
                 Text(text, style: TextStyle(
                     color: Colors.white, fontWeight: FontWeight.w600

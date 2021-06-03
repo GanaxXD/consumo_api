@@ -1,4 +1,5 @@
 import 'package:consumoapi/screens/addClient.dart';
+import 'package:consumoapi/screens/addOrder.dart';
 import 'package:consumoapi/screens/comentsList.dart';
 import 'package:consumoapi/screens/listClient.dart';
 import 'package:consumoapi/screens/listOrders.dart';
@@ -90,7 +91,7 @@ class MyDrawerNavigation extends StatelessWidget {
 
                 Divider(color: Colors.indigo, indent: 55, endIndent: 55,),
 
-                //Listar Comentários:
+                //Cadastrar Clientes:
                 ListTile(
                     leading: Icon(Icons.group_add, color: Colors.indigo),
                     title: Text("Cadastrar Cliente",
@@ -106,6 +107,21 @@ class MyDrawerNavigation extends StatelessWidget {
                     },
                 ),
 
+                //Cadastrar Ordem de Serviço:
+                ListTile(
+                    leading: Icon(Icons.group_add, color: Colors.indigo),
+                    title: Text("Cadastrar Ordem de Serviço",
+                        style: TextStyle(
+                            color: Colors.indigo,
+                            fontSize: 14, fontWeight: FontWeight.w800,
+                        ), overflow: TextOverflow.fade,
+                    ),
+                    onTap: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (context) => CadastrarOrdem()
+                        ));
+                    },
+                ),
 
             ],
         ),

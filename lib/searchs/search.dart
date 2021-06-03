@@ -17,7 +17,9 @@ class Searchs{
     Future<List<Clients>> getAllClients() async{
         List<Clients> clientes = [];
         try{
-            final result = await http.get(urlGetAllCients);
+            final result = await http.get(urlGetAllCients, headers: <String, String>{
+                'Content-Type': 'application/json; charset=UTF-8',
+            });
             if(result.statusCode == 200){
                 var decodeJson = jsonDecode(result.body);
                 //transformando os dados json da api em objeto client
@@ -36,7 +38,9 @@ class Searchs{
     Future getAllOrders() async{
         List<Orders> ordens = [];
         try{
-            final result = await http.get(urlGetAllOrders);
+            final result = await http.get(urlGetAllOrders, headers: <String, String>{
+                'Content-Type': 'application/json; charset=UTF-8',
+            });
             print(result);
             if(result.statusCode == 200){
                 print("RESULT BODY: ");
@@ -66,7 +70,9 @@ class Searchs{
         print(urlBeforeParse);
         var urlAfterParse = Uri.parse(urlBeforeParse);
         try{
-            final result = await http.get(urlAfterParse);
+            final result = await http.get(urlAfterParse, headers: <String, String>{
+                'Content-Type': 'application/json; charset=UTF-8',
+            });
             print(result);
             if(result.statusCode == 200){
                 var decodeJson = jsonDecode(result.body);
