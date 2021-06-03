@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> {
       //Pegando os resultados da pesquisa
       search.getAllClients().then((value) =>{
           result = value,
-          print(result),
           super.setState(() {
             loading = false;
           })
