@@ -28,7 +28,11 @@ class MyTextFormField extends StatelessWidget {
             ),
             // ignore: missing_return
             validator: (String value){
-                if(value == null || value.isEmpty){
+                if(hint.contains("Preço") || hint.contains("Id do Proprietário")){
+                    if(value.startsWith("-")){
+                        return "O valor precisa ser maior que zero";
+                    }
+                } else if(value == null || value.isEmpty) {
                     return "Este campo é obrigatório.";
                 }
             },
