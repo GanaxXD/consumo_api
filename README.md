@@ -12,7 +12,7 @@ Para mais informações sobre a API, acesse https://github.com/GanaxXD/SpringCli
 
   
 ## Tecnologias usadas:
-Dentre as ferramentas usadas para a criação da aplicação, temos:
+Dentre as ferramentas e tecnologias usadas para a criação da aplicação, temos:
 
 - Dart (Linguagem de programação)
 - Flutter (framework)
