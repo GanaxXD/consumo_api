@@ -3,6 +3,8 @@
 Este aplicativo visa de forma clara, demonstrar o consumo de uma API REST criada utilizando o 
 *Spring Boot* com a linguagem de programação Java (8), disponibilizada no *Heroku* (https://api-client-serviceorder.herokuapp.com/).  
 
+ Desta forma, a aplicação funcionará como um *client-side*, realizando operações básicas
+ na API sem nenhum modelo de ACL atualmente.
 ## Objetivo da Aplicação:
 
 Desta forma, a aplicação permite ao usuário listar as informações da base de dados na aplicação, ou cadastrar 
